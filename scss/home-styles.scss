@@ -1,0 +1,113 @@
+@import '_home-variables';
+@import '_home-mixins';
+@import '_home-reset';
+
+body {
+    background-image: url("/images/woman.jpg");
+    background-repeat: no-repeat;
+    background-color: $black;
+    color: $white;
+    width: 100%;
+    max-height: 1117px;
+    font-family: $font-alt;
+}
+
+.container {
+    padding: $padding-container;
+    color: $white;
+    max-width: $max-width;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    @include flex(center, space-between);
+    padding: 80px 0;
+    width: 100%;
+}
+
+/* Логотип */
+.title {
+    @include text(27px, 400);
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Навигация */
+.nav {
+    @include flex(center, flex-start, row, 75px);
+    margin-left: auto;
+    margin-right: 75px;
+
+    .nav-link {
+        text-decoration: none;
+        @include text(16px);
+        transition: color 0.3s;
+
+        &:hover {
+            color: $gold;
+        }
+    }
+}
+
+/* Соцсети */
+.socials {
+    @include flex(center, flex-start, row, 15px);
+    margin-left: 20px;
+
+    .social-link {
+        color: $white;
+        font-size: 20px;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $gold;
+        }
+    }
+}
+
+/* Основной контент */
+.main-content {
+    @include flex(flex-start, flex-start, column);
+    text-align: left;
+    padding-top: $padding-main-top;
+    padding-left: 121px;
+    padding-bottom: $padding-main-bottom;
+
+    .name {
+        @include text(60px, bold);
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        @include text(22px);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+}
+
+/* Футер */
+.footer {
+    width: 100%;
+    text-align: left;
+    @include text(16px);
+    padding: $padding-footer;
+    padding-left: $padding-footer-left;
+    margin-top: auto;
+}
+
+/* Адаптивность */
+@include mobile {
+    .main-content {
+        padding-left: 20px;
+
+        .name {
+            @include text(32px);
+        }
+
+        .subtitle {
+            @include text(14px);
+        }
+    }
+}

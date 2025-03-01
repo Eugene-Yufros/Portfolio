@@ -1,0 +1,22 @@
+// Миксин для flex-контейнеров
+@mixin flex($align: center, $justify: center, $direction: row, $gap: 0) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+// Миксин для текста
+@mixin text($size, $weight: normal, $color: $white) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+// Миксин для адаптивности
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
